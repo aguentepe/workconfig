@@ -1,6 +1,6 @@
 #!/bin/sh
 
-[ -z "$1" ] && 
+[ -z "$1" ] &&
 	echo Error: directory not found &&
 	exit 1
 
@@ -17,7 +17,7 @@ wal -n -t -i .config/wall.jpg
 
 xwallpaper --zoom "$HOME/.config/wall.jpg"
 
-# dwm Read colors from xrdb
-xdotool key super+q
+oomox-cli -o walmox -t $HOME/.local/share/themes -d true -m all $HOME/.cache/wal/colors-oomox
 
-$HOME/.local/src/oomox/plugins/theme_oomox/change_color.sh -o walmox -t $HOME/.local/share/themes -d true -m all $HOME/.cache/wal/colors-oomox
+# refresh window manager
+xdotool key super+q
