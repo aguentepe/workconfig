@@ -5,12 +5,15 @@
 randr-config
 
 # picom -bc
+xcompmgr -c &
 xbacklight =50
 xwallpaper --zoom "$HOME/.config/wall.jpg"
 
 xset b 0 0 0 && xset b off && xset s off && xset -dpms
 
 #Start Daemons
+# ~/agd/slstatus/slstatus &
+# clipboard-polling.sh &
 
 #Startup Programs
 # pavucontrol &
