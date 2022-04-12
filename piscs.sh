@@ -26,8 +26,8 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit 1 ;;
 esac done
 
-[ -z "$dotfilesrepo" ] && >&2 echo "error: option -r empty"
-[ -z "$progsfile" ] && >&2 echo "error: option -p empty"
+[ -z "$dotfilesrepo" ] && >&2 echo "error: option -r empty" && exit 1
+[ -z "$progsfile" ] && >&2 echo "error: option -p empty" && exit 1
 [ -z "$aurhelper" ] && aurhelper="yay"
 [ -z "$repobranch" ] && repobranch="master"
 
