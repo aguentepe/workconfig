@@ -1,5 +1,7 @@
 #!/bin/sh
 
+! [ -d "$HOME/.cache/wal" ] && wal-link /usr/share/wallpapers/deepin/Sunrise_by_Alexandre_Godreau.jpg
+
 autostart2.sh
 
 [ -f /tmp/autostart.isrunning ] && echo 'autostart.sh: already running' && exit
