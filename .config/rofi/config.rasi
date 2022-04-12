@@ -1,0 +1,18 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+  /** dpi: 140; **/
+}
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
+
+/* window { */
+/*   height: 25%; */
+/*   width: 25%; */
+/* } */
+
+* {
+  text-color: @foreground;
+}

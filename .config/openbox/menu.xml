@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://openbox.org/">
+  <menu id="root-menu" label="Applications">
+    <item label="File Manager"><action name="Execute"><command><![CDATA[xdg-open .]]></command></action></item>
+    <item label="Terminal"><action name="Execute"><command><![CDATA[xterm]]></command></action></item>
+    <item label="Web Browser"><action name="Execute"><command><![CDATA[xdg-open http://]]></command></action></item>
+    <item label="Run command" icon="/home/abd/.config/obmenu-generator/icons/2508f9fdbfe3190a802e615eeae63bd7.png"><action name="Execute"><command><![CDATA[gmrun]]></command></action></item>
+  <separator label="Categories"/>
+  <menu id="0.922834541489468" label="Accessories">
+    <item label="Android File Transfer (MTP)" icon="/home/abd/.config/obmenu-generator/icons/dc142b67018e9e6e03404b75e9b471ef.png"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="compton" icon="/home/abd/.config/obmenu-generator/icons/79706a0a3833a8b5a372c19635a63d02.png"><action name="Execute"><command><![CDATA[compton]]></command></action></item>
+    <item label="DB Browser for SQLite" icon="/home/abd/.config/obmenu-generator/icons/1f049a474e966914b5425bd4711a95f1.png"><action name="Execute"><command><![CDATA[sqlitebrowser]]></command></action></item>
+    <item label="Engrampa Archive Manager" icon="/home/abd/.config/obmenu-generator/icons/b2c7fba27738e9031182e51679eed3db.png"><action name="Execute"><command><![CDATA[engrampa]]></command></action></item>
+    <item label="Files" icon="/home/abd/.config/obmenu-generator/icons/662ebcadb28d0d2ac2fc6f1d5328a612.png"><action name="Execute"><command><![CDATA[nautilus --new-window]]></command></action></item>
+    <item label="Fonts" icon="/home/abd/.config/obmenu-generator/icons/f9afa8f334e133c9cfc2985c2d9f3bde.png"><action name="Execute"><command><![CDATA[gnome-font-viewer]]></command></action></item>
+    <item label="KTeaTime" icon="/home/abd/.config/obmenu-generator/icons/ec095a0d569608ba09d671afb810e589.png"><action name="Execute"><command><![CDATA[kteatime]]></command></action></item>
+    <item label="Neovim" icon="/home/abd/.config/obmenu-generator/icons/8ea2f54be0d3f8c7dd8b90597529e6d6.png"><action name="Execute"><command><![CDATA[xterm -e 'nvim']]></command></action></item>
+    <item label="picom"><action name="Execute"><command><![CDATA[picom]]></command></action></item>
+    <item label="SpaceFM File Search" icon="/home/abd/.config/obmenu-generator/icons/27e6ad59dbb92d925e16ebf9c179bf39.png"><action name="Execute"><command><![CDATA[spacefm --find-files]]></command></action></item>
+    <item label="SpaceFM" icon="/home/abd/.config/obmenu-generator/icons/926658cad1ea09e13159befb55e99485.png"><action name="Execute"><command><![CDATA[spacefm]]></command></action></item>
+    <item label="Text Editor" icon="/home/abd/.config/obmenu-generator/icons/43e023f7c1cd2af64ac38373e405e2ed.png"><action name="Execute"><command><![CDATA[gedit]]></command></action></item>
+    <item label="Winetricks" icon="/home/abd/.config/obmenu-generator/icons/c945d9f941ae6fe940f20a3cf42bda3a.png"><action name="Execute"><command><![CDATA[winetricks --gui]]></command></action></item>
+    <item label="xCHM" icon="/home/abd/.config/obmenu-generator/icons/4ad783e1249521592c02f803df59ce19.png"><action name="Execute"><command><![CDATA[xchm]]></command></action></item>
+    <item label="Xournal" icon="/home/abd/.config/obmenu-generator/icons/d97fb2eb1589985f10e45585eba42563.png"><action name="Execute"><command><![CDATA[xournal]]></command></action></item>
+  </menu>
+  <menu id="0.945693438963161" label="Development">
+    <item label="Data Display Debugger"><action name="Execute"><command><![CDATA[ddd]]></command></action></item>
+    <item label="DB Browser for SQLite" icon="/home/abd/.config/obmenu-generator/icons/1f049a474e966914b5425bd4711a95f1.png"><action name="Execute"><command><![CDATA[sqlitebrowser]]></command></action></item>
+    <item label="gitg" icon="/home/abd/.config/obmenu-generator/icons/b67ff22cc20120cc69cf8e058f210683.png"><action name="Execute"><command><![CDATA[gitg --no-wd]]></command></action></item>
+    <item label="Icon Browser" icon="/home/abd/.config/obmenu-generator/icons/b8313cedd85df19356441f35523d5676.png"><action name="Execute"><command><![CDATA[yad-icon-browser]]></command></action></item>
+    <item label="KCachegrind" icon="/home/abd/.config/obmenu-generator/icons/45e22e62c0920fad5eddb9ca66b213e9.png"><action name="Execute"><command><![CDATA[kcachegrind -qwindowtitle]]></command></action></item>
+    <item label="Qt5 Assistant" icon="/home/abd/.config/obmenu-generator/icons/826fc3c51b17458bde99c7be781f083b.png"><action name="Execute"><command><![CDATA[/usr/bin/assistant-qt5]]></command></action></item>
+    <item label="Qt5 Designer" icon="/home/abd/.config/obmenu-generator/icons/3388ad57c69e72c5bbb735192ccb4c66.png"><action name="Execute"><command><![CDATA[/usr/bin/designer-qt5]]></command></action></item>
+    <item label="Qt5 Linguist" icon="/home/abd/.config/obmenu-generator/icons/041b1c381692ee5c7dbb8a4f8dc31d0d.png"><action name="Execute"><command><![CDATA[/usr/bin/linguist-qt5]]></command></action></item>
+    <item label="Qt5 QDbusViewer" icon="/home/abd/.config/obmenu-generator/icons/6d161dd2d28f957d9d1c451b26545de4.png"><action name="Execute"><command><![CDATA[/usr/bin/qdbusviewer-qt5]]></command></action></item>
+  </menu>
+  <menu id="0.393415533044514" label="Education">
+    <item label="FreeCAD" icon="/home/abd/.config/obmenu-generator/icons/8a7a25c3f343671e3b88ae56858afc96.png"><action name="Execute"><command><![CDATA[FreeCAD]]></command></action></item>
+    <item label="LibreOffice Math" icon="/home/abd/.config/obmenu-generator/icons/91ab676fc942dc96d15c868480dbdcf0.png"><action name="Execute"><command><![CDATA[libreoffice --math]]></command></action></item>
+  </menu>
+  <menu id="0.172768477673294" label="Games">
+    <item label="Destiny2"><action name="Execute"><command><![CDATA[Destiny2]]></command></action></item>
+    <item label="doom"><action name="Execute"><command><![CDATA[doom]]></command></action></item>
+    <item label="DS3"><action name="Execute"><command><![CDATA[DS3]]></command></action></item>
+    <item label="KMines" icon="/home/abd/.config/obmenu-generator/icons/b737176c2d6b1247bc0dcf4c6c246fea.png"><action name="Execute"><command><![CDATA[kmines -qwindowtitle]]></command></action></item>
+    <item label="KPatience" icon="/home/abd/.config/obmenu-generator/icons/f86cd656ea87abea917e73c0609a7491.png"><action name="Execute"><command><![CDATA[kpat -qwindowtitle]]></command></action></item>
+    <item label="NEKOPARA1"><action name="Execute"><command><![CDATA[NEKOPARA1]]></command></action></item>
+    <item label="office"><action name="Execute"><command><![CDATA[office]]></command></action></item>
+    <item label="Taisei" icon="/home/abd/.config/obmenu-generator/icons/9cec40b78c47a059f5014a1e1a618b03.png"><action name="Execute"><command><![CDATA[taisei]]></command></action></item>
+    <item label="WordsEvil"><action name="Execute"><command><![CDATA[WordsEvil]]></command></action></item>
+    <item label="wsteam" icon="/home/abd/.config/obmenu-generator/icons/8b4902c5d24a30e0e78bb39cb1fb8024.png"><action name="Execute"><command><![CDATA[wsteam]]></command></action></item>
+    <item label="Xye" icon="/home/abd/.config/obmenu-generator/icons/b76b3a485c5037cc275fd2d971a7378e.png"><action name="Execute"><command><![CDATA[xye]]></command></action></item>
+  </menu>
+  <menu id="0.418475114868745" label="Graphics">
+    <item label="Document Viewer" icon="/home/abd/.config/obmenu-generator/icons/64170fd229eef6b4bdda83036f0d3276.png"><action name="Execute"><command><![CDATA[evince]]></command></action></item>
+    <item label="FreeCAD" icon="/home/abd/.config/obmenu-generator/icons/8a7a25c3f343671e3b88ae56858afc96.png"><action name="Execute"><command><![CDATA[FreeCAD]]></command></action></item>
+    <item label="GNU Image Manipulation Program" icon="/home/abd/.config/obmenu-generator/icons/031bb74f899b27dd0740011376599c7c.png"><action name="Execute"><command><![CDATA[gimp-2.10]]></command></action></item>
+    <item label="Gpick" icon="/home/abd/.config/obmenu-generator/icons/33c6e827796d58fa77a9adab3dc819b8.png"><action name="Execute"><command><![CDATA[gpick]]></command></action></item>
+    <item label="Inkscape" icon="/home/abd/.config/obmenu-generator/icons/f60d9b792fe82e2a491c034f68d35d21.png"><action name="Execute"><command><![CDATA[inkscape]]></command></action></item>
+    <item label="LibreOffice Draw" icon="/home/abd/.config/obmenu-generator/icons/98a0a28f171d63dc2be3910835bb4dad.png"><action name="Execute"><command><![CDATA[libreoffice --draw]]></command></action></item>
+    <item label="MATE Color Selection" icon="/home/abd/.config/obmenu-generator/icons/58c3706bd4dd7cd022fd5b41c9be8f37.png"><action name="Execute"><command><![CDATA[mate-color-select]]></command></action></item>
+    <item label="Mirage" icon="/home/abd/.config/obmenu-generator/icons/028b430ed844117c0c84a8327e31b9d8.png"><action name="Execute"><command><![CDATA[mirage]]></command></action></item>
+    <item label="Okular" icon="/home/abd/.config/obmenu-generator/icons/15caf14e9cbcf8c050e8053cc452fadb.png"><action name="Execute"><command><![CDATA[okular]]></command></action></item>
+  </menu>
+  <menu id="0.0709348872623963" label="Multimedia">
+    <item label="Audacity" icon="/home/abd/.config/obmenu-generator/icons/fd575e1855b417b9bb32518a55068cf9.png"><action name="Execute"><command><![CDATA[env UBUNTU_MENUPROXY=0 audacity]]></command></action></item>
+    <item label="Cheese" icon="/home/abd/.config/obmenu-generator/icons/34ddb4a876d6fa1ab7fa756b091614fe.png"><action name="Execute"><command><![CDATA[cheese]]></command></action></item>
+    <item label="K3b" icon="/home/abd/.config/obmenu-generator/icons/723b2e13c256627f946f44169a1a4d95.png"><action name="Execute"><command><![CDATA[k3b]]></command></action></item>
+    <item label="Kodi" icon="/home/abd/.config/obmenu-generator/icons/0f652b02e81b81d2eb4f2f112af900a6.png"><action name="Execute"><command><![CDATA[kodi]]></command></action></item>
+    <item label="mpv chapters" icon="/home/abd/.config/obmenu-generator/icons/72d82417b8f579ec7e852de69cba32a7.png"><action name="Execute"><command><![CDATA[mpv-ch]]></command></action></item>
+    <item label="mpv Media Player" icon="/home/abd/.config/obmenu-generator/icons/72d82417b8f579ec7e852de69cba32a7.png"><action name="Execute"><command><![CDATA[mpv --player-operation-mode=pseudo-gui --]]></command></action></item>
+    <item label="OBS Studio" icon="/home/abd/.config/obmenu-generator/icons/767d58c969eaa52c5f637edc81948ab7.png"><action name="Execute"><command><![CDATA[obs]]></command></action></item>
+    <item label="PulseAudio Equalizer"><action name="Execute"><command><![CDATA[pulseaudio-equalizer-gtk]]></command></action></item>
+    <item label="PulseAudio Volume Control"><action name="Execute"><command><![CDATA[pavucontrol]]></command></action></item>
+    <item label="Qt V4L2 test Utility" icon="/home/abd/.config/obmenu-generator/icons/c7862ca2d9fa1c149efd73cb87a38b54.png"><action name="Execute"><command><![CDATA[qv4l2]]></command></action></item>
+    <item label="Sound Recorder" icon="/home/abd/.config/obmenu-generator/icons/c5b04c21b4260a80e788ddc5715aaf47.png"><action name="Execute"><command><![CDATA[gnome-sound-recorder]]></command></action></item>
+    <item label="VLC media player" icon="/home/abd/.config/obmenu-generator/icons/e2980ee324069b6ce7f3bac9c5af0301.png"><action name="Execute"><command><![CDATA[/usr/bin/vlc --started-from-file]]></command></action></item>
+  </menu>
+  <menu id="0.684549200950951" label="Network">
+    <item label="Chromium"><action name="Execute"><command><![CDATA[/home/abd/bin/ungoogled-chromium_80.0.3987.149-2.1_linux/chrome-wrapper]]></command></action></item>
+    <item label="FileZilla" icon="/home/abd/.config/obmenu-generator/icons/40ff0a6e02082873ad5fb60ea98ce144.png"><action name="Execute"><command><![CDATA[filezilla]]></command></action></item>
+    <item label="Firefox Web Browser" icon="/home/abd/.config/obmenu-generator/icons/1d8c66813d50ea60416d05c88622b1f0.png"><action name="Execute"><command><![CDATA[firefox]]></command></action></item>
+    <item label="HexChat" icon="/home/abd/.config/obmenu-generator/icons/228699129d58161fdbe536e56c3503d6.png"><action name="Execute"><command><![CDATA[hexchat --existing]]></command></action></item>
+    <item label="JDownloader 2 Update &amp; Rescue"><action name="Execute"><command><![CDATA[/bin/sh "/opt/jd2/JDownloader2Update"]]></command></action></item>
+    <item label="JDownloader 2"><action name="Execute"><command><![CDATA[/bin/sh "/opt/jd2/JDownloader2"]]></command></action></item>
+    <item label="KDE Connect Indicator" icon="/home/abd/.config/obmenu-generator/icons/696e4da2398221966f3d879ff0a37811.png"><action name="Execute"><command><![CDATA[kdeconnect-indicator]]></command></action></item>
+    <item label="KDE Connect SMS" icon="/home/abd/.config/obmenu-generator/icons/696e4da2398221966f3d879ff0a37811.png"><action name="Execute"><command><![CDATA[kdeconnect-sms]]></command></action></item>
+    <item label="KDE Connect" icon="/home/abd/.config/obmenu-generator/icons/696e4da2398221966f3d879ff0a37811.png"><action name="Execute"><command><![CDATA[kdeconnect-app]]></command></action></item>
+    <item label="Open on connected device via KDE Connect" icon="/home/abd/.config/obmenu-generator/icons/696e4da2398221966f3d879ff0a37811.png"><action name="Execute"><command><![CDATA[kdeconnect-handler --open]]></command></action></item>
+    <item label="qBittorrent" icon="/home/abd/.config/obmenu-generator/icons/94b1980ff3b2f50ef0d12bb568a6eca5.png"><action name="Execute"><command><![CDATA[qbittorrent]]></command></action></item>
+    <item label="Signal" icon="/home/abd/.config/obmenu-generator/icons/9981e970e6837cf73be222185635e264.png"><action name="Execute"><command><![CDATA[signal-desktop]]></command></action></item>
+    <item label="Skype" icon="/home/abd/.config/obmenu-generator/icons/00c9118987765d7224a14c2583a2eb48.png"><action name="Execute"><command><![CDATA[/usr/bin/skypeforlinux]]></command></action></item>
+    <item label="Thunderbird" icon="/home/abd/.config/obmenu-generator/icons/1c10746fd3abaac025ee3c87eb4759b8.png"><action name="Execute"><command><![CDATA[thunderbird]]></command></action></item>
+    <item label="Tor Browser Launcher Settings" icon="/home/abd/.config/obmenu-generator/icons/ac612885342841b758297dc59bb1c74c.png"><action name="Execute"><command><![CDATA[torbrowser-launcher --settings]]></command></action></item>
+    <item label="Tor Browser" icon="/home/abd/.config/obmenu-generator/icons/ac612885342841b758297dc59bb1c74c.png"><action name="Execute"><command><![CDATA[torbrowser-launcher]]></command></action></item>
+    <item label="Transmission" icon="/home/abd/.config/obmenu-generator/icons/2a61a1bcfdbfa779dd0c615a513ea711.png"><action name="Execute"><command><![CDATA[transmission-gtk]]></command></action></item>
+    <item label="Wireshark" icon="/home/abd/.config/obmenu-generator/icons/e47ffc46a739bac5b9fb25e8ec23d97b.png"><action name="Execute"><command><![CDATA[wireshark]]></command></action></item>
+  </menu>
+  <menu id="0.437344922725138" label="Office">
+    <item label="Calibre" icon="/home/abd/.config/obmenu-generator/icons/2010a1cc214d99ecc599edc2e840cc41.png"><action name="Execute"><command><![CDATA[calibre --detach]]></command></action></item>
+    <item label="Document Viewer" icon="/home/abd/.config/obmenu-generator/icons/64170fd229eef6b4bdda83036f0d3276.png"><action name="Execute"><command><![CDATA[evince]]></command></action></item>
+    <item label="E-book editor" icon="/home/abd/.config/obmenu-generator/icons/6f7e40b45dcb896fbd2cbbfd4fab1a98.png"><action name="Execute"><command><![CDATA[ebook-edit --detach]]></command></action></item>
+    <item label="E-book viewer" icon="/home/abd/.config/obmenu-generator/icons/afd4b6086d5f59560384dc7988da4960.png"><action name="Execute"><command><![CDATA[ebook-viewer --detach]]></command></action></item>
+    <item label="Foliate" icon="/home/abd/.config/obmenu-generator/icons/def9fb2472525c243e0c7745f583168b.png"><action name="Execute"><command><![CDATA[com.github.johnfactotum.Foliate]]></command></action></item>
+    <item label="KCC"><action name="Execute"><command><![CDATA[kcc]]></command></action></item>
+    <item label="LibreOffice Base" icon="/home/abd/.config/obmenu-generator/icons/afea34f0b24fa2f34fc8906593709122.png"><action name="Execute"><command><![CDATA[libreoffice --base]]></command></action></item>
+    <item label="LibreOffice Calc" icon="/home/abd/.config/obmenu-generator/icons/b0274d20f7796518393a76740eb788c1.png"><action name="Execute"><command><![CDATA[libreoffice --calc]]></command></action></item>
+    <item label="LibreOffice Draw" icon="/home/abd/.config/obmenu-generator/icons/98a0a28f171d63dc2be3910835bb4dad.png"><action name="Execute"><command><![CDATA[libreoffice --draw]]></command></action></item>
+    <item label="LibreOffice Impress" icon="/home/abd/.config/obmenu-generator/icons/a98e2fc5dd7feeb02a6c7b73b0ce3799.png"><action name="Execute"><command><![CDATA[libreoffice --impress]]></command></action></item>
+    <item label="LibreOffice Math" icon="/home/abd/.config/obmenu-generator/icons/91ab676fc942dc96d15c868480dbdcf0.png"><action name="Execute"><command><![CDATA[libreoffice --math]]></command></action></item>
+    <item label="LibreOffice Writer" icon="/home/abd/.config/obmenu-generator/icons/1d7385cff54d381548576cf6a7c98701.png"><action name="Execute"><command><![CDATA[libreoffice --writer]]></command></action></item>
+    <item label="LibreOffice" icon="/home/abd/.config/obmenu-generator/icons/39d497cac0e7189934ac1649594c0d41.png"><action name="Execute"><command><![CDATA[libreoffice]]></command></action></item>
+    <item label="LRF viewer" icon="/home/abd/.config/obmenu-generator/icons/afd4b6086d5f59560384dc7988da4960.png"><action name="Execute"><command><![CDATA[lrfviewer]]></command></action></item>
+    <item label="Okular" icon="/home/abd/.config/obmenu-generator/icons/15caf14e9cbcf8c050e8053cc452fadb.png"><action name="Execute"><command><![CDATA[okular]]></command></action></item>
+    <item label="qpdfview" icon="/home/abd/.config/obmenu-generator/icons/db583407a51bd2e3be719679ae627ebd.png"><action name="Execute"><command><![CDATA[qpdfview --unique]]></command></action></item>
+  </menu>
+  <menu id="0.102156425119038" label="Settings">
+    <item label="Advanced Network Configuration"><action name="Execute"><command><![CDATA[nm-connection-editor]]></command></action></item>
+    <item label="Customize Look and Feel"><action name="Execute"><command><![CDATA[lxappearance]]></command></action></item>
+    <item label="File Management"><action name="Execute"><command><![CDATA[/usr/bin/caja-file-management-properties]]></command></action></item>
+    <item label="KDE Connect Settings" icon="/home/abd/.config/obmenu-generator/icons/696e4da2398221966f3d879ff0a37811.png"><action name="Execute"><command><![CDATA[kdeconnect-settings]]></command></action></item>
+    <item label="Oomox: customize icons and GTK themes" icon="/home/abd/.config/obmenu-generator/icons/6c098b2cb5231bce225987e66a3a1865.png"><action name="Execute"><command><![CDATA[oomox-gui]]></command></action></item>
+    <item label="Openbox Configuration Manager" icon="/home/abd/.config/obmenu-generator/icons/61f3de6fd06f9847e869878302ba1980.png"><action name="Execute"><command><![CDATA[obconf]]></command></action></item>
+    <item label="Print Settings"><action name="Execute"><command><![CDATA[system-config-printer]]></command></action></item>
+    <item label="PulseAudio Preferences"><action name="Execute"><command><![CDATA[paprefs]]></command></action></item>
+    <item label="PulseAudio Volume Control"><action name="Execute"><command><![CDATA[pavucontrol]]></command></action></item>
+    <item label="YAD settings" icon="/home/abd/.config/obmenu-generator/icons/b8313cedd85df19356441f35523d5676.png"><action name="Execute"><command><![CDATA[yad-settings]]></command></action></item>
+  </menu>
+  <menu id="0.880739979271993" label="System">
+    <item label="Android File Transfer (MTP)" icon="/home/abd/.config/obmenu-generator/icons/dc142b67018e9e6e03404b75e9b471ef.png"><action name="Execute"><command><![CDATA[android-file-transfer]]></command></action></item>
+    <item label="Caja"><action name="Execute"><command><![CDATA[/usr/bin/caja --no-desktop --browser]]></command></action></item>
+    <item label="conky" icon="/home/abd/.config/obmenu-generator/icons/318979f26d22619bc4641612b7836f9c.png"><action name="Execute"><command><![CDATA[conky --daemonize --pause=1]]></command></action></item>
+    <item label="dconf Editor" icon="/home/abd/.config/obmenu-generator/icons/f2f005ade3f70af9a5fcd699e3cba8c0.png"><action name="Execute"><command><![CDATA[dconf-editor]]></command></action></item>
+    <item label="Disk Usage Analyzer" icon="/home/abd/.config/obmenu-generator/icons/2989bc821d68e92416f69fb57cbdfed2.png"><action name="Execute"><command><![CDATA[baobab]]></command></action></item>
+    <item label="GNOME System Monitor" icon="/home/abd/.config/obmenu-generator/icons/ca9328c86ef7dd38b7d0e1265708e4b9.png"><action name="Execute"><command><![CDATA[gnome-system-monitor]]></command></action></item>
+    <item label="GParted" icon="/home/abd/.config/obmenu-generator/icons/a7ee8bca1e5e7f2273955590a1a9ab45.png"><action name="Execute"><command><![CDATA[/usr/bin/gparted-pkexec]]></command></action></item>
+    <item label="Htop" icon="/home/abd/.config/obmenu-generator/icons/dfd897cf7539d79d86b3b2db1c9e118c.png"><action name="Execute"><command><![CDATA[xterm -e 'htop']]></command></action></item>
+    <item label="kitty" icon="/home/abd/.config/obmenu-generator/icons/9230f9c50903e85b9112e6cea2673815.png"><action name="Execute"><command><![CDATA[kitty]]></command></action></item>
+    <item label="Manage Printing"><action name="Execute"><command><![CDATA[xdg-open http://localhost:631/]]></command></action></item>
+    <item label="Oracle VM VirtualBox" icon="/home/abd/.config/obmenu-generator/icons/ee6adc838532fb720682196c08d62f21.png"><action name="Execute"><command><![CDATA[VirtualBox]]></command></action></item>
+    <item label="Print Settings"><action name="Execute"><command><![CDATA[system-config-printer]]></command></action></item>
+    <item label="SpaceFM" icon="/home/abd/.config/obmenu-generator/icons/926658cad1ea09e13159befb55e99485.png"><action name="Execute"><command><![CDATA[spacefm]]></command></action></item>
+    <item label="System Monitor" icon="/home/abd/.config/obmenu-generator/icons/ca9328c86ef7dd38b7d0e1265708e4b9.png"><action name="Execute"><command><![CDATA[gnome-system-monitor]]></command></action></item>
+    <item label="Tint2" icon="/home/abd/.config/obmenu-generator/icons/c13fc627ff023a7a18eaa23897f9a059.png"><action name="Execute"><command><![CDATA[tint2]]></command></action></item>
+    <item label="Virtual Machine Manager" icon="/home/abd/.config/obmenu-generator/icons/68de87dbe1994a0c05fed999344f9341.png"><action name="Execute"><command><![CDATA[virt-manager]]></command></action></item>
+  </menu>
+  <separator/>
+  <menu id="0.203886045857683" label="Advanced Settings">
+    <item label="Conky RC" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[geany ~/.conkyrc]]></command></action></item>
+    <item label="Tint2 Panel" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[geany ~/.config/tint2/tint2rc]]></command></action></item>
+  <menu id="0.318526999782513" label="Obmenu-Generator">
+    <item label="Menu Schema" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/schema.pl]]></command></action></item>
+    <item label="Menu Config" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[geany ~/.config/obmenu-generator/config.pl]]></command></action></item>
+  <separator/>
+    <item label="Generate a static menu"><action name="Execute"><command><![CDATA[obmenu-generator -s -c]]></command></action></item>
+    <item label="Generate a static menu with icons"><action name="Execute"><command><![CDATA[obmenu-generator -s -i -c]]></command></action></item>
+  <separator/>
+    <item label="Generate a dynamic menu"><action name="Execute"><command><![CDATA[obmenu-generator -p]]></command></action></item>
+    <item label="Generate a dynamic menu with icons"><action name="Execute"><command><![CDATA[obmenu-generator -p -i]]></command></action></item>
+  <separator/>
+    <item label="Refresh cache" icon="/home/abd/.config/obmenu-generator/icons/d44f4889cf4d02ebed9acbed60fb0e31.png"><action name="Execute"><command><![CDATA[obmenu-generator -d]]></command></action></item>
+  </menu>
+  <menu id="0.486347390834442" icon="/home/abd/.config/obmenu-generator/icons/cbd33e85d4e0834359519a4e282b2aeb.png" label="Openbox">
+    <item label="Openbox Autostart" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[gedit ~/.config/openbox/autostart]]></command></action></item>
+    <item label="Openbox RC" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[gedit ~/.config/openbox/rc.xml]]></command></action></item>
+    <item label="Openbox Menu" icon="/home/abd/.config/obmenu-generator/icons/9678a7afa605b002f3def8cccf01e113.png"><action name="Execute"><command><![CDATA[gedit ~/.config/openbox/menu.xml]]></command></action></item>
+    <item label="Reconfigure Openbox" icon="/home/abd/.config/obmenu-generator/icons/cbd33e85d4e0834359519a4e282b2aeb.png"><action name="Execute"><command><![CDATA[openbox --reconfigure]]></command></action></item>
+  </menu>
+  </menu>
+  <separator/>
+    <item label="Lock"><action name="Execute"><command><![CDATA[xscreensaver-command -lock]]></command></action></item>
+    <item label="Exit" icon="/home/abd/.config/obmenu-generator/icons/050a0a99aedc90ab0f18c1191c189f95.png"><action name="Exit"/></item>
+  </menu>
+</openbox_menu>

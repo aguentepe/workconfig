@@ -1,0 +1,19 @@
+#!/bin/sh
+# This script creates a script with the name $1 and opens it for editing.
+
+if [ $# -ne 1 ];then
+  echo "usage: mkscript <name>"
+  exit
+fi
+
+FILE=~/.local/bin/$1
+
+if ! [ -f "$FILE" ];then
+	# create file
+	touch "$FILE"
+	chmod +x "$FILE"
+	echo "#!/bin/sh" > "$FILE"
+fi
+
+# edit file
+$EDITOR "$FILE"

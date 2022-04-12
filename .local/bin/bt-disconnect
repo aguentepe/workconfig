@@ -1,0 +1,2 @@
+#!/bin/sh
+bluetoothctl -- disconnect 20:74:CF:4B:4D:13

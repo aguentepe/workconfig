@@ -1,0 +1,75 @@
+# Basic binds
+super + Return
+	$TERMINAL
+super + d
+	rofi -show run
+# super + b
+# super + shift + b
+#
+super + c
+	rofi -show calc
+super + e
+	setxkbmap ar
+super + w
+	setxkbmap us altgr-intl
+super + shift + s
+	zzz
+super + shift + e
+	lslsr
+super + shift + x
+	setxkbmap us altgr-intl && slock && sleep 1
+super + ctrl + shift + x
+	setxkbmap us altgr-intl && for i in $(seq 10); do slock && sleep 1; done
+super + v
+	mpv --no-terminal $(xclip -sel clip -o)
+# super + shift + v
+super + shift + f
+	xclip -sel clip -o -t image/png | feh -
+# super + semicolon
+# super + shift + semicolon
+# super + slash
+super + shift + slash
+	xdotool click 3
+
+# Take a screenshot
+super + g      
+	fshot -f
+super + shift + g
+	fshot
+super + f
+	ocrshot
+# Turn 2nd monitor off
+# super + shift + p
+# 	xrandr --output HDMI1 --off && xwallpaper --zoom .config/wall.jpg
+# Turn 2nd monitor on
+# super + p
+	# xrandr --output HDMI-A-1 --auto --right-of HDMI-A-0 --rotate right --scale 1.125x1.125
+# Queue a download
+# super + o
+super + shift + o
+	xdg-open "$(xclip -sel clip -o)"
+# super + n
+# super + shift + n
+# super + ctrl + n
+
+super + plus
+	amixer set Master 5%+
+super + minus
+	amixer set Master 5%-
+
+#XF86
+XF86Display
+	toggle_eDP1
+XF86MonBrightnessDown
+	xbacklight -10
+XF86MonBrightnessUp
+	xbacklight +10
+
+XF86AudioMute
+	amixer set Master 0%
+XF86AudioLowerVolume
+	amixer set Master 10%-
+XF86AudioRaiseVolume
+	amixer set Master 10%+
+XF86AudioMicMute
+	amixer set 'Mic Boost' 0%

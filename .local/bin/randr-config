@@ -1,0 +1,12 @@
+#!/bin/sh
+#Configure Monitors
+if [ -n "$(xrandr | grep '^DP1 connected')" ]; then
+	xrandr --output eDP1 --off
+	xrandr --output DP1 --auto --primary --dpi 140
+	[ -n "$(xrandr | grep 'HDMI1 connected')" ] && xrandr --output HDMI1 --auto --left-of DP1 --rotate normal
+	# [ -n "$(xrandr | grep 'HDMI1 connected')" ] && xrandr --output HDMI1 --auto --scale 2 --same-as DP1
+	# xrandr --output eDP1 --auto --below DP1
+else
+	xrandr --output DP1 --auto --off
+	xrandr --output eDP1 --auto --primary --dpi 96
+fi

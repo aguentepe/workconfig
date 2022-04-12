@@ -1,0 +1,23 @@
+#!/bin/sh
+
+[ -z "$1" ] && 
+	echo Error: directory not found &&
+	exit 1
+
+NEW_WALL="$(find $1 -iname '*.jpg' -or -iname '*.png' | shuf | sxiv - -fto | sed 1q)"
+
+[ -z $NEW_WALL ] && exit 1
+
+cp "$NEW_WALL" $HOME/.config/wall.jpg
+
+# delete cache because wallpaper file name is the same
+wal -c
+
+wal -n -t -i .config/wall.jpg
+
+xwallpaper --zoom "$HOME/.config/wall.jpg"
+
+# dwm Read colors from xrdb
+xdotool key super+q
+
+$HOME/.local/src/oomox/plugins/theme_oomox/change_color.sh -o walmox -t $HOME/.local/share/themes -d true -m all $HOME/.cache/wal/colors-oomox

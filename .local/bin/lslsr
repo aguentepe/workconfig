@@ -1,0 +1,28 @@
+#!/bin/sh
+# lslsr - lock/suspend/logout/shutdown/reboot
+
+LOCK="Lock screen"
+
+OPERATION=$(echo "$LOCK\nSuspend\nLogout\nShutdown\nReboot" | rofi -dmenu -p "Power menu" -lines 5 -width 11)
+
+case $OPERATION in
+	$LOCK)
+		slock && sleep 1 ;;
+	Suspend)
+		# umount usb drives
+		sudo zzz && slock
+		;;
+	Logout)
+		# umount usb drives
+		killall Xorg
+		rm /tmp/autostart.isrunning
+		;;
+	Shutdown)
+		# umount usb drives
+		kitty -e sudo shutdown -h now
+		;;
+	Reboot)
+		# umount usb drives
+		kitty -e sudo shutdown -r now
+		;;
+esac

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Laptop wakes up instantly after suspend
+# Solution found on:
+#     https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Instantaneous_wakeups_from_suspend
+# This needs to be run with root
+
+echo XHC > /proc/acpi/wakeup

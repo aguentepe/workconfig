@@ -1,0 +1,91 @@
+!! ##########################
+!! Colorscheme solarized-dark
+!! ##########################
+
+!#define S_base03        #002b36
+!#define S_base02        #073642
+!#define S_base01        #586e75
+!#define S_base00        #657b83
+!#define S_base0         #839496
+!#define S_base1         #93a1a1
+!#define S_base2         #eee8d5
+!#define S_base3         #fdf6e3
+
+#include "~/.cache/wal/colors.Xresources"
+
+!! ######################
+!! XFT font configuration
+!! ######################
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 140
+
+!Xcursor.theme:
+Xcursor.size: 32
+
+!! #####
+!! URXVT
+!! #####
+
+URxvt.intensityStyles:	false
+!URxvt.background:       [100]#002b36
+!URxvt.background:       [90]#000000
+URxvt.background:       [94]#19272c
+URxvt.depth:		32
+URxvt.font: 		xft:monospace:size=11,
+!                       xft:CodeNewRoman Nerd Font:size=12,
+!			xft:Inconsolata Nerd Font Mono:size=14,
+!			xft:UbuntuMono Nerd Font:size=13,
+!			xft:Noto Sans:size=16
+URxvt.scrollBar:	false
+URxvt.saveLines:	12000
+URxvt.cursorColor:	magenta
+
+!! Extensions
+URxvt.perl-lib:		.config/urxvt
+URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorUL:		#4682B4
+!! url-select
+URxvt.keysym.M-u:	perl:url-select:select_next
+URxvt.url-select.launcher: xdg-open
+!linkhandler
+URxvt.url-select.underline: true
+!! keyboard-select:
+URxvt.keysym.M-Escape: 	perl:keyboard-select:activate
+!! resize-font
+URxvt.resize-font.smaller:	C-Down
+URxvt.resize-font.bigger:	C-Up
+URxvt.resize-font.reset:	C-0
+URxvt.keysym.C-Down:		perl:resize-font:smaller
+URxvt.keysym.C-Up:			perl:resize-font:bigger
+URxvt.keysym.C-0:			perl:resize-font:reset
+!! Matcher
+URxvt.url-launcher:	xdg-open
+URxvt.matcher.button:	1
+
+URxvt.keysmy.Escape:	
+
+!! ####
+!! rofi
+!! ####
+
+rofi.color-enabled:	true
+rofi.color-window:	#000, #000, #000
+rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
+rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
+rofi.color-urgent:	#002b37, #da4281, #003643, #008ed4, #890661
+
+rofi.fake-transparency:	true
+rofi.lines:		3
+rofi.bw:		0
+rofi.opacity:		"10"
+rofi.hide-scrollbar:	true
+rofi.width:		30
+
+xclock.width:  512
+xclock.height: 512

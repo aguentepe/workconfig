@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ "$(bluetoothctl -- show | grep Powered | cut -d' ' -f2)" = no ] &&
+	bluetoothctl -- power on
+bluetoothctl -- disconnect 20:74:CF:4B:4D:13
+sleep 1
+bluetoothctl -- connect 20:74:CF:4B:4D:13

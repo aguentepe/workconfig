@@ -1,0 +1,85 @@
+#!/bin/sh
+
+alias maim='maim -u'
+
+TMPIMG=/tmp/fshot.png
+
+[ "$@" = '-f' ] && {
+	# maim -g 3840x2160+1080 > $TMPIMG
+	maim -g > $TMPIMG
+	# sxiv $TMPIMG -b -g 5055x2160+1+0 &
+	sxiv $TMPIMG -fb &
+	PIDSXIV=$!
+	#take clipping screenshot of sxiv
+	maim -s | xclip -selection clipboard -t image/png
+	kill $PIDSXIV
+
+	exit
+}
+
+CLIP='Clipboard'
+OPEN='Open in Window'
+SAVE='Save File'
+BOOK='Add to Book'
+SHOW='Show Folder'
+STAR='Start Composite'
+
+SEL="$(echo "$CLIP\n$OPEN\n$SAVE\n$BOOK\n$SHOW\n$STAR" | rofi -dmenu -l 6 -width 11 -i -matching fuzzy -p fshot)"
+
+case "$SEL" in
+	$CLIP) maim -s | xclip -selection clipboard -t image/png ;;
+	$OPEN) maim -s | feh - ;;
+	$SAVE)
+		maim -s > $TMPIMG
+		FILENAME="$(echo "screen_$(date +'%d%m%Y-%H:%M:%S')_$(find $HOME/pix/screens/ -type f | wc -l)" | rofi -dmenu -p Filename)"
+		[ -n "$FILENAME" ] && mv "$TMPIMG" "$HOME/pix/screens/$FILENAME.png"
+		;;
+	$BOOK)
+		TMPTEXT=/tmp/fshot.txt
+		NEW='Make New'
+		BOOKS=$HOME/pix/screens/books
+		find $BOOKS -type f -printf '%f\n' > $TMPTEXT
+		echo "$NEW" >> $TMPTEXT
+		BOOK="$(rofi -dmenu -p Book < $TMPTEXT)"
+		[ -n "$BOOK" ] && maim -s > $TMPIMG && {
+			if [ "$BOOK" = "$NEW" ]; then
+				NAME=$(yad --title="Name for new Screenshot Book" --fixed --center --entry)
+				[ -n "$NAME" ] && 7z a -tzip "$BOOKS/${NAME}.cbz" $TMPIMG
+			else
+				TIMEDNAME="${TMPIMG}$(date +%s).png"
+				mv $TMPIMG "$TIMEDNAME"
+				7z u "$BOOKS/$BOOK" $TIMEDNAME
+				rm "$TIMEDNAME"
+			fi
+		}
+		;;
+	$SHOW)
+		SCREENS="$HOME/pix/screens"
+		# FILE="$(find $SCREENS -type f -printf '%P\n' | rofi -dmenu -i -p 'Show Screenshot[s]')"
+		FILE="$(find pix/screens -type f -printf "%T@ %Tc %P\n" | sort -nr | cut -d' ' -f9- | rofi -dmenu -i -p 'Show Screenshot[s]')"
+		[ -n "$FILE" ] && xdg-open "$SCREENS/$FILE"
+		exit
+		;;
+	$STAR)
+		TF=/tmp/fshot
+		OUT=$TF/output.png
+		mkdir -p $TF
+
+		INAME=$TF/$(date +%s).png
+		yad --title="Take a Composite Screenshot" --fixed --button="Continue:1" --button="Finish:2"
+		BUTTON=$?
+
+		while [ $BUTTON = "1" ]
+		do
+			maim -s > $INAME
+			INAME=$TF/$(date +%s).png
+			yad --title="Take a Composite Screenshot" --fixed --button="Continue:1" --button="Finish:2"
+			BUTTON=$?
+		done
+
+		convert $TF/* -gravity center -append $OUT
+		cat $OUT | xclip -sel clip -t image/png
+		xclip -sel clip -o | feh -
+		rm -rd $TF
+		;;
+esac
