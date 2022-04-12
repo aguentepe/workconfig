@@ -29,7 +29,7 @@ esac done
 [ -z "$dotfilesrepo" ] && >&2 echo "error: option -r empty" && exit 1
 [ -z "$progsfile" ] && >&2 echo "error: option -p empty" && exit 1
 [ -z "$aurhelper" ] && aurhelper="yay"
-[ -z "$repobranch" ] && repobranch="master"
+[ -z "$repobranch" ] && repobranch="main"
 
 ### FUNCTIONS ###
 
@@ -229,9 +229,9 @@ yes | sudo -u "$name" $aurhelper -S libxft-bgra-git >/dev/null 2>&1
 
 # Install the dotfiles in the user's home directory
 putgitrepo "$dotfilesrepo" "/home/$name" "$repobranch"
-rm -f "/home/$name/LICENSE" "/home/$name/piscs.sh" "/home/$name/progs.csv"
-# make git ignore deleted LICENSE, piscs.sh & progs.csv files
-git update-index --assume-unchanged "/home/$name/LICENSE" "/home/$name/piscs.sh" "/home/$name/progs.csv"
+rm -f "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/piscs.sh" "/home/$name/progs.csv"
+# make git ignore deleted LICENSE & README.md files
+git update-index --assume-unchanged "/home/$name/README.md" "/home/$name/LICENSE" "/home/$name/piscs.sh" "/home/$name/progs.csv"
 
 # Most important command! Get rid of the beep!
 systembeepoff
