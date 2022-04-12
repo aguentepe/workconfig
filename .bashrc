@@ -25,6 +25,7 @@ alias ap="sudo apt-get purge"
 alias aa="sudo apt-get autoremove"
 alias as="xbps-query"
 
+alias vim=nvim
 alias v=vim
 alias rm=trash
 alias open=xdg-open
