@@ -17,13 +17,13 @@ alias c=clear
 alias cl='c && l'
 alias grep='grep --color=auto'
 
-alias ai="sudo xbps-install -S"
-alias au="sudo xbps-install -Su"
+alias ai="sudo pacman -S"
+alias au="sudo pacman -Syyuu"
 alias ag="sudo apt-get update"
-alias ar="sudo xbps-remove -R"
+alias ar="sudo pacman -Rsu"
 alias ap="sudo apt-get purge"
 alias aa="sudo apt-get autoremove"
-alias as="xbps-query"
+alias as="pacman -Ss"
 
 alias vim=nvim
 alias v=vim
