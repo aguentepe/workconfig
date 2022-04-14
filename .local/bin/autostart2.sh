@@ -24,4 +24,3 @@ xset b 0 0 0 && xset b off && xset s off && xset -dpms
 # trayer --edge top --align right --SetDockType true --expand true --transparent true --widthtype request --tint 0x000000 -l &
 batsignal &
 tint2 &
-volumeicon &
