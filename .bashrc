@@ -25,7 +25,6 @@ alias ap="sudo apt-get purge"
 alias aa="sudo apt-get autoremove"
 alias as="pacman -Ss"
 
-alias vim=nvim
 alias v=vim
 alias rm=trash
 alias open=xdg-open
