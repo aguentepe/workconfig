@@ -33,7 +33,7 @@ esac done
 
 ### FUNCTIONS ###
 
-installpkg(){ pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
+installpkg(){ yes | pacman --needed -S "$1" >/dev/null 2>&1 ;}
 
 error() { printf "%s\n" "$1" >&2; exit 1; }
 
