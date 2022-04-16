@@ -1,1 +1,1 @@
-autostart.sh
+exec autostart.sh
