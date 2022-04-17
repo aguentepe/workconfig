@@ -3,8 +3,6 @@
 . ~/.config/bash/key-bindings.bash
 . ~/.cache/wal/colors.sh
 
-export PATH="$HOME/.local/bin/win:$HOME/.local/bin:$PATH"
-
 # Automatically trim long paths in the prompt
 PROMPT_DIRTRIM=3
 
