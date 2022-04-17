@@ -4,8 +4,7 @@
 #Configure Monitors
 randr-config
 
-# picom -bc
-xcompmgr -c &
+picom -bc
 xbacklight =50
 xwallpaper --zoom "$HOME/.config/wall.jpg"
 

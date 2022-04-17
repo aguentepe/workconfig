@@ -7,7 +7,7 @@
 ,xwallpaper,"sets the wallpaper."
 ,xdotool,"provides window action utilities on the command line."
 ,xclip,"allows for copying and pasting from the command line."
-,xcompmgr,"is for transparency and removing screen-tearing."
+,picom,"is for transparency and window shadows"
 ,openbox,"floating window manager"
 ,obconf,"openbox config manager"
 A,obmenu-generator,"menu generator for the Openbox Window Manager"
