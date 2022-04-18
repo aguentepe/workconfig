@@ -32,12 +32,10 @@ super + shift + slash
 	xdotool click 3
 
 # Take a screenshot
-super + g      
+super + g
 	fshot -f
 super + shift + g
 	fshot
-super + f
-	ocrshot
 # Turn 2nd monitor off
 # super + shift + p
 # 	xrandr --output HDMI1 --off && xwallpaper --zoom .config/wall.jpg
