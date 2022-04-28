@@ -73,12 +73,11 @@ set number relativenumber
 "set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
 set tabstop=4 softtabstop=-1 shiftwidth=4 noexpandtab
 set clipboard=unnamedplus
-set noshowmode
 set ignorecase smartcase
 set splitright splitbelow
 set mouse=a                    " all mouse modes
 set path+=**
-set list lcs=tab:\|\
+set list listchars=tab:⎸\ ,trail:$,nbsp:+
 
 syntax enable                  " syntax highlighting
 
@@ -90,8 +89,53 @@ nmap  :w<CR>
 command Rc tabe $HOME/.config/nvim/init.vim
 nmap <leader>d :bd<CR>
 
-command Copyrightmessage normal cc/* Copyright (c) 2022 Abdullah Güntepe, <abdullah@guentepe.com>
+command Copyrightmessage normal ccCopyright (c) 2022 Abdullah Güntepe, <abdullah@guentepe.com>gcc
 
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+set foldcolumn=2
+set foldmethod=expr
+set fillchars=fold:\ 
+" This will make a fold out of indented paragraphs separated by blank lines:
+set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s\\+\\S'?'>2':getline(v:lnum)=~'^\\s\\+\\S'?'=':getline(v:lnum)=~'^.*{[^}]*$'?1:getline(v:lnum)=~'^}[^{]*$'?'<1':'='
+
+set foldtext=FoldText()
+function! FoldText()
+	let l:lpadding = &fdc
+	redir => l:signs
+		execute 'silent sign place buffer='.bufnr('%')
+	redir End
+	let l:lpadding += l:signs =~ 'id=' ? 2 : 0
+
+	if (&number)
+		let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+	elseif (&relativenumber)
+		let l:lpadding += max([&numberwidth, strlen(v:foldstart - line('w0')), strlen(line('w$') - v:foldstart), strlen(v:foldstart)]) + 1
+	endif
+
+	let l:info = ' (' . (v:foldend - v:foldstart) . ')'
+	let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
+	let l:width = winwidth(0) - l:lpadding - l:infolen
+
+	if (getline(v:foldstart)=~'^\s*$')
+		" let l:start = repeat(' ', (v:foldlevel - 1) * &shiftwidth)
+		let l:text = substitute(substitute(getline(v:foldstart)=~'^\s*$'?getline(v:foldstart+1):getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g'), repeat(' ', &tabstop), '⎸' . repeat(' ', &tabstop-1), 'g')
+	else
+		" expand tabs
+		let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
+		let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
+
+		let l:separator = ' … '
+		let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
+		let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
+		let l:text = l:start . l:separator . l:end
+	endif
+
+	return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+endfunction
 
 " --- Development Specific settings -----------------------------------
 set makeprg=make\ -j\ 8
