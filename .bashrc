@@ -32,7 +32,7 @@ alias lmk='latexmk -output-format=pdf -pvc'
 # Huge history. Doesn't appear to slow things down, so why not?
 HISTSIZE=5000000
 HISTFILESIZE=1000000
-export HISTIGNORE="&:[ ]*:exit:ls:l:ll:bg:fg:history:clear:c:v:aa:au:ag:.."
+export HISTIGNORE="&:[ ]*:exit:ls:l:ll:fg:history:clear:c:v:aa:au:ag:.."
 
 # Disk Speed Test https://www.shellhacks.com/disk-speed-test-read-write-hdd-ssd-perfomance-linux/
 # benchmark write (Test Disk Write Speed)
