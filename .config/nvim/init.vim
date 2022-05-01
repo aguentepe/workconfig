@@ -99,45 +99,55 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-set foldcolumn=2
-set foldmethod=expr
-set fillchars=fold:\ 
-" This will make a fold out of indented paragraphs separated by blank lines:
-set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s\\+\\S'?'>2':getline(v:lnum)=~'^\\s\\+\\S'?'=':getline(v:lnum)=~'^.*{[^}]*$'?1:getline(v:lnum)=~'^}[^{]*$'?'<1':'='
+au FileType c call FoldCurlyBrackets()
+au FileType cc call FoldCurlyBrackets()
+au FileType cpp call FoldCurlyBrackets()
+au FileType c++ call FoldCurlyBrackets()
+au FileType odin call FoldCurlyBrackets()
+function FoldCurlyBrackets()
+	set foldcolumn=2
+	set foldmethod=expr
+	set fillchars=fold:\ 
+	" This will make a fold out of indented paragraphs separated by blank lines and nonindented blocks:
+	set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s\\+\\S'?'>2':getline(v:lnum)=~'^\\s\\+\\S'?'=':getline(v:lnum)=~'^.*{[^}]*$'?1:getline(v:lnum)=~'^}[^{]*$'?'<1':'='
 
-set foldtext=FoldText()
-function! FoldText()
-	let l:lpadding = &fdc
-	redir => l:signs
-		execute 'silent sign place buffer='.bufnr('%')
-	redir End
-	let l:lpadding += l:signs =~ 'id=' ? 2 : 0
+	set foldtext=FoldText()
+	function! FoldText()
+		let l:lpadding = &fdc
+		redir => l:signs
+			execute 'silent sign place buffer='.bufnr('%')
+		redir End
+		let l:lpadding += l:signs =~ 'id=' ? 2 : 0
 
-	if (&number)
-		let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
-	elseif (&relativenumber)
-		let l:lpadding += max([&numberwidth, strlen(v:foldstart - line('w0')), strlen(line('w$') - v:foldstart), strlen(v:foldstart)]) + 1
-	endif
+		if (&number)
+			let l:lpadding += max([&numberwidth, strlen(line('$'))]) + 1
+		elseif (&relativenumber)
+			let l:lpadding += max([&numberwidth, strlen(v:foldstart - line('w0')), strlen(line('w$') - v:foldstart), strlen(v:foldstart)]) + 1
+		endif
 
-	let l:info = ' (' . (v:foldend - v:foldstart) . ')'
-	let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
-	let l:width = winwidth(0) - l:lpadding - l:infolen
+		let l:info = ' (' . (v:foldend - v:foldstart) . ')'
+		let l:infolen = strlen(substitute(l:info, '.', 'x', 'g'))
+		let l:width = winwidth(0) - l:lpadding - l:infolen
 
-	if (getline(v:foldstart)=~'^\s*$')
-		" let l:start = repeat(' ', (v:foldlevel - 1) * &shiftwidth)
-		let l:text = substitute(substitute(getline(v:foldstart)=~'^\s*$'?getline(v:foldstart+1):getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g'), repeat(' ', &tabstop), '⎸' . repeat(' ', &tabstop-1), 'g')
-	else
-		" expand tabs
-		let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
-		let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
+		if (getline(v:foldstart)=~'^\s*$')
+			" let l:start = repeat(' ', (v:foldlevel - 1) * &shiftwidth)
+			let l:start = substitute(substitute(getline(v:foldstart)=~'^\s*$'?getline(v:foldstart+1):getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g'), repeat(' ', &tabstop), '⎸' . repeat(' ', &tabstop-1), 'g')
+			let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
 
-		let l:separator = ' … '
-		let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
-		let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
-		let l:text = l:start . l:separator . l:end
-	endif
+			return l:start . repeat(' ', l:width + (l:infolen - 5) - strlen(substitute(l:start, ".", "x", "g")) - strlen(substitute(l:end, ".", "x", "g"))) . l:end . repeat(' ', 5 - l:infolen) . l:info
+		else
+			" expand tabs
+			let l:start = substitute(getline(v:foldstart), '\t', repeat(' ', &tabstop), 'g')
+			let l:end = substitute(substitute(getline(v:foldend), '\t', repeat(' ', &tabstop), 'g'), '^\s*', '', 'g')
 
-	return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+			let l:separator = ' … '
+			let l:separatorlen = strlen(substitute(l:separator, '.', 'x', 'g'))
+			let l:start = strpart(l:start , 0, l:width - strlen(substitute(l:end, '.', 'x', 'g')) - l:separatorlen)
+			let l:text = l:start . l:separator . l:end
+		endif
+
+		return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
+	endfunction
 endfunction
 
 " --- Development Specific settings -----------------------------------
