@@ -13,6 +13,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'romainl/flattened'
 Plug 'robertmeta/nofrils'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'dylanaraps/wal.vim'
 
 " ----- Making Vim look good ------------------------------------------
 Plug 'vim-airline/vim-airline'
@@ -39,6 +40,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'udalov/kotlin-vim'
 Plug 'Tetralux/odin.vim'
+Plug 'elkowar/yuck.vim'
 " Debugging
 " Plug 'puremourning/vimspector'
 " Intellisense Engine
@@ -165,7 +167,8 @@ nmap <leader>r !(cd build && make -j 8) && make test
 set background=dark
  let g:solarized_termtrans = 0
 " colorscheme flattened_dark
-colorscheme terafox
+" colorscheme terafox
+colorscheme wal
 " call togglebg#map("<leader>b")
 
 
@@ -203,7 +206,7 @@ nmap <leader>f :Files<CR>
 
 " ----- blahgeek/neovim-colorcoder -----
 "let g:colorcoder_enable_filetypes = ['cpp', 'hpp']
-set termguicolors
+" set termguicolors
 
 "nmap <leader>c :ColorcoderUpdate!<CR>
 
