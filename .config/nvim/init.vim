@@ -101,19 +101,22 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" --- Folding -----------------------------------
+
 au FileType c call FoldCurlyBrackets()
 au FileType cc call FoldCurlyBrackets()
 au FileType cpp call FoldCurlyBrackets()
 au FileType c++ call FoldCurlyBrackets()
 au FileType odin call FoldCurlyBrackets()
+au FileType markdown call FoldMD()
 function FoldCurlyBrackets()
-	set foldcolumn=2
-	set foldmethod=expr
-	set fillchars=fold:\ 
+	setlocal foldcolumn=2
+	setlocal foldmethod=expr
+	setlocal fillchars=fold:\ 
 	" This will make a fold out of indented paragraphs separated by blank lines and nonindented blocks:
-	set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s\\+\\S'?'>2':getline(v:lnum)=~'^\\s\\+\\S'?'=':getline(v:lnum)=~'^.*{[^}]*$'?1:getline(v:lnum)=~'^}[^{]*$'?'<1':'='
+	setlocal foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'^\\s\\+\\S'?'>2':getline(v:lnum)=~'^\\s\\+\\S'?'=':getline(v:lnum)=~'^.*{[^}]*$'?1:getline(v:lnum)=~'^}[^{]*$'?'<1':'='
 
-	set foldtext=FoldText()
+	setlocal foldtext=FoldText()
 	function! FoldText()
 		let l:lpadding = &fdc
 		redir => l:signs
@@ -150,6 +153,13 @@ function FoldCurlyBrackets()
 
 		return l:text . repeat(' ', l:width - strlen(substitute(l:text, ".", "x", "g"))) . l:info
 	endfunction
+endfunction
+function FoldMD()
+	setlocal foldcolumn=2
+	setlocal foldmethod=expr
+	setlocal fillchars=fold:\ 
+	" setlocal foldexpr=getline(v:lnum)=~'^##'?1:getline(v:lnum)=~'^#'?0:getline(v:lnum-1)=~'^#'?'a1':'='
+	setlocal foldexpr=getline(v:lnum)=~'^##'?'>2':getline(v:lnum)=~'^#'?'>1':'='
 endfunction
 
 " --- Development Specific settings -----------------------------------
