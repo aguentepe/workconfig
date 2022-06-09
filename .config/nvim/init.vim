@@ -28,7 +28,7 @@ Plug 'ap/vim-css-color'
 " ----- Vim as a programmer's text editor -----------------------------
 Plug 'tpope/vim-commentary'
 " Asynchronous Lint Engine
-" Plug 'w0rp/ale'
+Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 " Alternate Files quickly (.c --> .h etc)
@@ -47,6 +47,8 @@ Plug 'elkowar/yuck.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Asynchronous build and test dispatcher
 Plug 'tpope/vim-dispatch'
+Plug 'gentoo/gentoo-syntax'
+Plug 'preservim/nerdtree'
 
 " ----- Working with Git ----------------------------------------------
 " A Vim plugin which shows a git diff in the sign column
