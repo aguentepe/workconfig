@@ -209,6 +209,11 @@ set updatetime=100
 let g:airline#extensions#hunks#non_zero_only = 1
 
 
+" ----- tpope/vim-fugitive settings -----
+nmap <leader>w :Gwrite<CR>
+nmap <leader>c :G commit<CR>
+
+
 " ----- junegunn/fzf.vim settings -----
 nmap <leader>t :Buffers<CR>
 nmap <leader>f :Files<CR>
