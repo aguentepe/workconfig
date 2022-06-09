@@ -124,8 +124,8 @@ local taglist_buttons = gears.table.join(
                                                   client.focus:toggle_tag(t)
                                               end
                                           end),
-                    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-                    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
+                    awful.button({ }, 5, function(t) awful.tag.viewnext(t.screen) end),
+                    awful.button({ }, 4, function(t) awful.tag.viewprev(t.screen) end)
                 )
 
 local tasklist_buttons = gears.table.join(
@@ -143,10 +143,10 @@ local tasklist_buttons = gears.table.join(
                      awful.button({ }, 3, function()
                                               awful.menu.client_list({ theme = { width = 250 } })
                                           end),
-                     awful.button({ }, 4, function ()
+                     awful.button({ }, 5, function ()
                                               awful.client.focus.byidx(1)
                                           end),
-                     awful.button({ }, 5, function ()
+                     awful.button({ }, 4, function ()
                                               awful.client.focus.byidx(-1)
                                           end))
 
@@ -259,9 +259,9 @@ globalkeys = gears.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey,           }, ",", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey,           }, ".", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey,           }, ".", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey,           }, ",", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
