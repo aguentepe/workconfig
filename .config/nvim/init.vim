@@ -75,8 +75,8 @@ call plug#end()
 " --- General settings ------------------------------------------------
 set title
 set number relativenumber
-"set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
-set tabstop=4 softtabstop=-1 shiftwidth=4 noexpandtab
+set tabstop=8 softtabstop=4 shiftwidth=4 expandtab
+" set tabstop=4 softtabstop=-1 shiftwidth=4 noexpandtab
 set clipboard=unnamedplus
 set ignorecase smartcase
 set splitright splitbelow
@@ -164,9 +164,9 @@ nmap <leader>r !(cd build && make -j 8) && make test
 " ----- Plugin-Specific Settings --------------------------------------
 
 " Set the colorscheme
-set background=dark
- let g:solarized_termtrans = 0
-" colorscheme flattened_dark
+" set background=dark
+" let g:solarized_termtrans = 0
+" colorscheme flattened_light
 " colorscheme terafox
 colorscheme wal
 " call togglebg#map("<leader>b")
