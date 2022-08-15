@@ -3,26 +3,22 @@
 
 LOCK="Lock screen"
 
-OPERATION=$(echo "$LOCK\nSuspend\nLogout\nShutdown\nReboot" | rofi -dmenu -p "Power menu" -lines 5 -width 11)
+OPERATION=$(echo -e "$LOCK\nSuspend\nLogout\nShutdown\nReboot" | rofi -dmenu -p "Power menu" -lines 5 -width 11)
 
 case $OPERATION in
 	$LOCK)
-		slock && sleep 1 ;;
+		slock && sleep 1
+                ;;
 	Suspend)
-		# umount usb drives
-		sudo zzz && slock
+		systemctl suspend && slock
 		;;
 	Logout)
-		# umount usb drives
 		killall Xorg
-		rm /tmp/autostart.isrunning
 		;;
 	Shutdown)
-		# umount usb drives
-		kitty -e sudo shutdown -h now
+		systemctl poweroff
 		;;
 	Reboot)
-		# umount usb drives
-		kitty -e sudo shutdown -r now
+		systemctl reboot
 		;;
 esac
