@@ -218,7 +218,7 @@ nmap <leader>c :G commit<CR>
 
 " ----- junegunn/fzf.vim settings -----
 nmap <leader>t :Buffers<CR>
-nmap <leader>f :Files<CR>
+nmap <leader>f :GitFiles<CR>
 
 
 " ----- blahgeek/neovim-colorcoder -----
