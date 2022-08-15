@@ -9,7 +9,7 @@ cp "$NEW_WALL" $HOME/.config/wall.jpg
 # delete cache because wallpaper file name is the same
 wal -c
 
-wal -n -t -i $HOME/.config/wall.jpg
+wal -n -t -l -i $HOME/.config/wall.jpg
 
 xwallpaper --zoom "$HOME/.config/wall.jpg"
 
