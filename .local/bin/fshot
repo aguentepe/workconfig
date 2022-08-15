@@ -24,7 +24,7 @@ BOOK='Add to Book'
 SHOW='Show Folder'
 STAR='Start Composite'
 
-SEL="$(echo "$CLIP\n$OPEN\n$SAVE\n$BOOK\n$SHOW\n$STAR" | rofi -dmenu -l 6 -width 11 -i -matching fuzzy -p fshot)"
+SEL="$(echo -e "$CLIP\n$OPEN\n$SAVE\n$BOOK\n$SHOW\n$STAR" | rofi -dmenu -l 6 -width 11 -i -matching fuzzy -p fshot)"
 
 case "$SEL" in
 	$CLIP) maim -s | xclip -selection clipboard -t image/png ;;

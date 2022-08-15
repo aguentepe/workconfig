@@ -2,3 +2,9 @@
 [user]
 	name = Abdullah Güntepe
 	email = abdullah@guentepe.com
+[diff]
+	tool = nvimdiff
+[core]
+	excludesfile = ~/.config/git/ignore
+[merge]
+	tool = nvimdiff
