@@ -17,7 +17,6 @@ alias grep='grep --color=auto'
 
 alias ai="sudo pacman -S"
 alias au="sudo pacman -Syyuu"
-alias ag="sudo apt-get update"
 alias ar="sudo pacman -Rsu"
 alias ap="sudo apt-get purge"
 alias aa="sudo apt-get autoremove"
@@ -28,6 +27,8 @@ alias rm=trash
 alias open=xdg-open
 alias wget="wget --hsts-file=$HOME/.local/share/wget-hsts"
 alias lmk='latexmk -output-format=pdf -pvc'
+
+alias d=docker
 
 # Huge history. Doesn't appear to slow things down, so why not?
 HISTSIZE=5000000
